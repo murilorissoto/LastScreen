@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  /* background: url(https://images.unsplash.com/photo-1549916281-80e7650b83fa?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+      no-repeat center center;
+    background-size: cover; */
+  background-color: #d8d8d8;
+  height: 80vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+/* MENU RESPONSIVO */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  height: 10vh;
+  background: #23232e;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  backdrop-filter: blur(10px);
+  height: 10vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+  margin: 10px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 999px) {
+  .mobile-menu div {
+    z-index: 10000;
+    width: 32px;
+    height: 1px;
+    margin: 8px;
+    background: #fff;
+  }
+
+  .mobile-menu {
+    cursor: pointer;
+    display: none;  
+    z-index: 10000;
+  }
+
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+      z-index: 1000;
+    }
+    .nav-list {
+      position: absolute;
+      top: 10vh;
+      right: 0;
+      width: 50vw;
+      height: 70vh;
+      background: #23232e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      z-index: 10000;
+      transform: translate(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      z-index: 10000;
+      display: block;
+    }
+  }
+
+  .nav-list.active {
+    transform: translateX(0);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.tit {
+  display: flex;
+  justify-content: center;
+  color: #000000;
+}
+
+.titulo2 h1 {
+  color: #000000;
+  font-weight: 700;
+  font-size: 38px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Colunas ajustadas para melhorar a harmonia */
+  gap: 15px; /* Aumenta o espaçamento entre os botões */
+  padding: 20px; /* Espaçamento interno aumentado */
+  justify-content: center; /* Centraliza os itens na horizontal */
+}
+
+button {
+  margin: 0; /* Remove a margem extra ao redor dos botões */
+  width: 100%; /* Faz os botões ocuparem toda a largura do contêiner */
+  padding: 15px; /* Mantém o padding */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Mão ao passar o mouse */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Borda arredondada */
+  background-color: #23232e; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  transition: background-color 0.3s; /* Efeito de transição ao passar o mouse */
+}
+button:hover {
+    background-color: #292929; /* Cor de fundo ao passar o mouse */
+}
+
+.scroll{
+    height: 70px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    translate: -50%;
+    animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.titulo-img {
+  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Use space-around para espaçamento */
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
+  text-align: center; /* Centraliza o texto */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column; /* Coloca o texto em coluna */
+  align-items: center; /* Centraliza o texto horizontalmente */
+}
+
+.titulo-img img {
+  height: 200px; /* Mantém a altura da imagem */
+  min-width: 200px; /* Garante que a imagem seja responsiva */
+}
